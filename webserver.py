@@ -7,7 +7,7 @@ serverPort = 8000
 
 class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        path = "www/" + self.path[1:].split("?")[0]
+        path = "docs/" + self.path[1:].split("?")[0]
         if os.path.isfile(path):
             self.send_response(200)
             self.send_header("Content-type", self.guess_type(path))
@@ -38,11 +38,11 @@ class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
                     self.copyfile(f, self.wfile)
                 finally:
                     f.close()
-        elif os.path.isfile("www/404.html"):
+        elif os.path.isfile("docs/404.html"):
             self.send_response(404)
-            self.send_header("Content-type", self.guess_type("www/404.html"))
+            self.send_header("Content-type", self.guess_type("docs/404.html"))
             self.end_headers()
-            f = open("www/404.html", 'rb')
+            f = open("docs/404.html", 'rb')
             if f:
                 try:
                     self.copyfile(f, self.wfile)
