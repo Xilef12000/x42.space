@@ -4,7 +4,13 @@
         url('Fonts/Inter-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
-    
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('Fonts/Raleway.woff2') format('woff'),
+        url('Fonts/Raleway.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
 }
 :root {
     --color-bg: #1c1b22;
@@ -24,7 +30,9 @@ body {
     color: var(--color-text);
     padding: 0px;
     margin: 0px;
-    top:0px;}
+    top:0px;
+    font-family: raleway, Arial, Helvetica, sans-serif;
+}
 div {
     padding: 0px;
     margin: 0px;
