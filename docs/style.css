@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'inter-black';
     src: url('Fonts/Inter-Black.woff2') format('woff'),
-        url('Fonts/Inter-Black.ttf') format('truetype');
+    url('Fonts/Inter-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
 }
 @font-face {
     font-family: 'raleway';
     src: url('Fonts/Raleway.woff2') format('woff'),
-        url('Fonts/Raleway.ttf') format('truetype');
+    url('Fonts/Raleway.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -24,7 +24,8 @@
     --transition: 0.25s;
     color-scheme: dark !important;
 }
-body {
+body, html {
+    font-size: 16px;
     box-sizing: border-box;
     background-color: var(--color-bg);
     color: var(--color-text);
@@ -36,6 +37,9 @@ body {
 div {
     padding: 0px;
     margin: 0px;
+}
+a {
+    color: var(--color-6);
 }
 .start-screen{
     position: flex;
@@ -64,6 +68,7 @@ div {
     -webkit-text-fill-color: transparent;
 }
 .start-text {
+    transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -72,12 +77,112 @@ div {
     font-weight: 900;
     letter-spacing: -0.6vw;
 }
-.start-menue {
+.start-poly-1 {
+    transform: translate(-50%, -50%);
+    background-color: var(--color-2);
+    width: 9ch;
+    height: 2ex;
+    display:inline-block;
+    display: none;
+    --top-left:40px;
+    --all:0px;
+    -webkit-mask:
+    linear-gradient(  45deg, transparent 0 var(--bottom-left,var(--all)) ,#fff 0) bottom left,
+    linear-gradient( -45deg, transparent 0 var(--bottom-right,var(--all)),#fff 0) bottom right,
+    linear-gradient( 135deg, transparent 0 var(--top-left,var(--all))    ,#fff 0) top left,
+    linear-gradient(-135deg, transparent 0 var(--top-right,var(--all))   ,#fff 0) top right;
+    -webkit-mask-size:50.5% 50.5%;
+    -webkit-mask-repeat:no-repeat;
+    border-left: 0.5rem solid black;
+    border: 0.5rem solid black;
+}
+.start-poly {
+    font-size: min(16vw, 80vh);
+    transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 50%;
+    left: 50%;
 }
 
-a {
-    color: var(--color-6);
+#menu-toggle {
+    display: none;
+}
+.menu-button-container {
+    z-index: 10;
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    transition: left 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-button, .menu-button::before, .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    top: 0.87rem;
+    height: 0.25rem;
+    width: 2rem;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 1rem;
+}
+.menu-button::before {
+    content: '';
+    top: -0.5rem;
+}
+.menu-button::after {
+    content: '';
+    top: 0.5rem;
+}
+#menu-toggle:checked + .menu-button-container {
+    left: calc(20vw - 2.2rem - 1rem);
+}
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    top: 0px;
+    transform: rotate(405deg);
+}
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    top: 0px;
+    transform: rotate(-405deg);
+}
+.menu {
+    z-index: 8;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+#menu-toggle ~ .menu {
+    width: 0;
+    transition: width 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#menu-toggle:checked ~ .menu {
+    width: 20vw;
+    transition: width 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu > li {
+    font-size: 2rem;
+    margin: 0.6em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: white;
+    --cut: 0.6em;
+    -webkit-clip-path: polygon(0% var(--cut), var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 100%);
+    background-color: var(--color-4);
+    border-radius: calc(var(--cut) / 4);
+}
+
+.menu > li:first-child{
+    margin-top: 4rem;
 }
