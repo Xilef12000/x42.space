@@ -12,6 +12,13 @@
     font-weight: 500;
     font-style: normal;
 }
+@font-face {
+    font-family: 'spacemono';
+    src: url('Fonts/SpaceMono.woff2') format('woff'),
+    url('Fonts/SpaceMono.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 :root {
     --color-bg: #1c1b22;
     --color-1: #04165d;
@@ -185,8 +192,6 @@ a {
 .menu > li:first-child{
     margin-top: 4rem;
 }
-
-
 #cards {
     display: flex;
     flex-wrap: wrap;
@@ -248,4 +253,12 @@ a {
     padding: 1rem;
     position: absolute;
     z-index: 2;
+}
+.splitflap {
+    font-family: spacemono, "DejaVu Sans Mono", monospace;
+    color: white;
+}
+.splitflap:hover {
+    background-color: white;
+    color: black;
 }
