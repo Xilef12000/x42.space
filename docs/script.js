@@ -9,4 +9,17 @@ window.onmousemove = e => {
     var offY = (e.clientY/window.innerHeight-0.5)*2*movY
     text1.style.transform = `translate(${-50+offX+2}%, ${-50+offY+2}%)`;
     text2.style.transform = `translate(${-50-offX-2}%, ${-50-offY-2}%)`;
+
+
 }
+
+document.getElementById("cards").onmousemove = e => {
+    for(const card of document.getElementsByClassName("card")) {
+      const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+  
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    };
+  }
