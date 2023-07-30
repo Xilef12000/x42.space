@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .start-screen-small{
     position: flex;
-    height: 14vh;
+    height: max(14vh, 4rem);
     background-color: var(--color-bg);
 }
 .start-screen-small .start-text-1 {
@@ -144,12 +144,12 @@ h1, h2, h3, h4, h5, h6, p {
     -webkit-text-fill-color: transparent;
 }
 .start-screen-small .start-text {
+    font-size: min(16vw, 80vh, 6rem);
     transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
     position: absolute;
-    top: 6.4%;
+    top: 0.64em;
     left: 50%;
     font-family: inter-black, Arial, Helvetica, sans-serif;
-    font-size: 6rem;
     font-weight: 900;
     letter-spacing: -0.6vw;
 }
@@ -157,36 +157,37 @@ h1, h2, h3, h4, h5, h6, p {
     display: none;
 }
 .menu-button-container {
+    font-size: 1rem;
     z-index: 10;
     display: flex;
     cursor: pointer;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    width: 2rem;
-    height: 2rem;
+    top: 1em;
+    left: 1em;
+    width: 2em;
+    height: 2em;
     transition: left 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .menu-button, .menu-button::before, .menu-button::after {
     display: block;
     background-color: #fff;
     position: absolute;
-    top: 0.87rem;
-    height: 0.25rem;
-    width: 2rem;
+    top: 0.87em;
+    height: 0.25em;
+    width: 2em;
     transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    border-radius: 1rem;
+    border-radius: 1em;
 }
 .menu-button::before {
     content: '';
-    top: -0.5rem;
+    top: -0.5em;
 }
 .menu-button::after {
     content: '';
-    top: 0.5rem;
+    top: 0.5em;
 }
 #menu-toggle:checked + .menu-button-container {
-    left: calc(20vw - 2.2rem - 1rem);
+    left: calc(min(max(20vw,28ch), 100vw) - 2.2rem - 1rem);
 }
 #menu-toggle:checked + .menu-button-container .menu-button::before {
     top: 0px;
@@ -200,6 +201,7 @@ h1, h2, h3, h4, h5, h6, p {
     transform: rotate(-405deg);
 }
 .menu {
+    font-size: 2rem;
     z-index: 8;
     height: 100vh;
     margin: 0;
@@ -214,12 +216,11 @@ h1, h2, h3, h4, h5, h6, p {
     transition: width 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 #menu-toggle:checked ~ .menu {
-    width: 20vw;
+    width: min(max(20vw,14ch), 100vw);
     transition: width 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .menu > li {
     cursor: pointer;
-    font-size: 2rem;
     margin: 0.6em;
     overflow: hidden;
     display: flex;
@@ -268,8 +269,7 @@ h1, h2, h3, h4, h5, h6, p {
 .card:hover::before {
     opacity: 1;
 }
-.card::before,
-.card::after {
+.card::before, .card::after {
     border-radius: inherit;
     content: "";
     height: 100%;
