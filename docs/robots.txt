@@ -1,0 +1,2 @@
+Sitemap: https://x42.space/sitemap.xml
+Sitemap: https://x42.space/sitemap.txt
