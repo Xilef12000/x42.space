@@ -1,11 +1,11 @@
 const text1 = document.getElementById("text-1");
 const text2 = document.getElementById("text-2");
 const text3 = document.getElementById("text-3");
-const movX = 2.5
-const movY = 2.1
+const movX = 2.5;
+const movY = 2.1;
 window.onmousemove = e => {
-    var offX = (e.clientX/window.innerWidth-0.5)*2*movX
-    var offY = (e.clientY/window.innerHeight-0.5)*2*movY
+    var offX = (e.clientX/window.innerWidth-0.5)*2*movX;
+    var offY = (e.clientY/window.innerHeight-0.5)*2*movY;
     text1.style.transform = `translate(${-50+offX+2}%, ${-50+offY+2}%)`;
     text2.style.transform = `translate(${-50-offX-2}%, ${-50-offY-2}%)`;
     
@@ -14,8 +14,8 @@ window.onmousemove = e => {
 
 document.getElementById("cards").onmousemove = e => {
     for(const card of document.getElementsByClassName("card")) {
-        const rect = card.getBoundingClientRect(),
-        x = e.clientX - rect.left,
+        const rect = card.getBoundingClientRect();
+        x = e.clientX - rect.left;
         y = e.clientY - rect.top;
         card.style.setProperty("--mouse-x", `${x}px`);
         card.style.setProperty("--mouse-y", `${y}px`);
@@ -24,7 +24,7 @@ document.getElementById("cards").onmousemove = e => {
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let interval = null;
-const flaps = document.getElementsByClassName("splitflap")
+const flaps = document.getElementsByClassName("splitflap");
 for (const flap of flaps){
     flap.onmouseover = event => {  
         let iteration = 0;
@@ -36,7 +36,7 @@ for (const flap of flaps){
                 if(index < iteration) {
                     return event.target.dataset.value[index];
                 }
-                return letters[Math.floor(Math.random() * 26)]
+                return letters[Math.floor(Math.random() * 26)];
             })
             .join("");
             if(iteration >= event.target.dataset.value.length){ 

@@ -27,7 +27,8 @@
     --color-4: #4af3f8;
     --color-5: #3cd2f9;
     --color-6: #0950cd;
-    --color-text: #fbfbfe;
+    --color-text-1: #f0f0f0;
+    --color-text-2: #8c8c8c;
     --transition: 0.25s;
     color-scheme: dark !important;
 }
@@ -337,4 +338,17 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .br {
     height: 1em;
+}
+#cards .card .card-content {
+    padding: 2rem;
+}
+#cards .card .card-content h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    color: var(--color-text-1)
+}
+#cards .card .card-content h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--color-text-2)
 }
