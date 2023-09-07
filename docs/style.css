@@ -28,7 +28,7 @@
     --color-5: #3cd2f9;
     --color-6: #0950cd;
     --color-text-1: #f0f0f0;
-    --color-text-2: #8c8c8c;
+    --color-text-2: #8c8c8c; /* color-mix(in srgb, var(--color-text-1), #282828) */
     --transition: 0.25s;
     color-scheme: dark !important;
 }
@@ -345,10 +345,38 @@ h1, h2, h3, h4, h5, h6, p {
 #cards .card .card-content h1 {
     font-size: 2rem;
     margin-top: 0;
-    color: var(--color-text-1)
+    color: var(--color-text-1);
+    transition: color 800ms cubic-bezier(0.23, 1, 0.32, 1);
+    transition: text-shadow 800ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 #cards .card .card-content h2 {
     font-size: 1.5rem;
     margin-top: 1rem;
-    color: var(--color-text-2)
+    color: color-mix(in srgb, var(--color-text-1), #282828);
+    transition: color 800ms cubic-bezier(0.23, 1, 0.32, 1);
+    transition: text-shadow 800ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#cards .hydrogen:hover .card-content h1{
+    color: #0082C9;
+    text-shadow: 0 0 1em #0082C9;
+}
+#cards .hydrogen:hover .card-content h2{
+    color: color-mix(in srgb, #0082C9, #282828);
+    text-shadow: 0 0 1em color-mix(in srgb, #0082C9, #282828);
+}
+#cards .carbon:hover .card-content h1{
+    color: #000000;
+    text-shadow: 0 0 1em #ffffff;
+}
+#cards .carbon:hover .card-content h2{
+    color: color-mix(in srgb, #000000, #282828);
+    text-shadow: 0 0 1em #d7d7d7;
+}
+#cards .neon:hover .card-content h1{
+    color: #F05032;
+    text-shadow: 0 0 1em #F05032;
+}
+#cards .neon:hover .card-content h2{
+    color: color-mix(in srgb, #F05032, #282828);
+    text-shadow: 0 0 1em color-mix(in srgb, #F05032, #282828);
 }
