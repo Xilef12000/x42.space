@@ -381,3 +381,11 @@ h1, h2, h3, h4, h5, h6, p {
     color: color-mix(in srgb, #F05032, #282828);
     text-shadow: 0 0 1em color-mix(in srgb, #F05032, #282828);
 }
+#cards .potassium:hover .card-content h1{
+    color: #0085c2;
+    text-shadow: 0 0 1em #0085c2;
+}
+#cards .potassium:hover .card-content h2{
+    color: color-mix(in srgb, #0085c2, #282828);
+    text-shadow: 0 0 1em color-mix(in srgb, #0085c2, #282828);
+}
