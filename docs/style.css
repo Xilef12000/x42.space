@@ -41,6 +41,10 @@ body, html {
     margin: 0px;
     top:0px;
     font-family: raleway, Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+.gradient {
+    background: linear-gradient(var(--color-2), rgba(0,0,0,0) 100vh);
 }
 div {
     padding: 0px;
@@ -59,7 +63,6 @@ h1, h2, h3, h4, h5, h6, p {
 .start-screen{
     position: flex;
     height: 100vh;
-    background-color: var(--color-bg);
 }
 .start-screen .start-text-1 {
     transform: translate(-48%, -48%);
@@ -121,8 +124,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .start-screen-small{
     position: flex;
-    height: max(14vh, 4rem);
-    background-color: var(--color-bg);
+    height: max(14vh, 4rem, min(16vw, 80vh, 8rem));
 }
 .start-screen-small .start-text-1 {
     transform: translate(-48%, -48%);
@@ -330,9 +332,14 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: row;
     width: 60vw;
     max-width: 960px;
+    min-height: calc(100vh - max(14vh, 4rem, min(16vw, 80vh, 8rem)) - 10vh);
     flex-direction: column;
     flex-wrap: wrap;
     flex-grow: 1;
+    background-color: color-mix(in srgb, var(--color-bg), transparent 75%);
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: 0.1rem solid var(--color-text-1);
 }
 .content-container > * {
     width: 100%;
