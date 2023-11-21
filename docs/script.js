@@ -22,27 +22,27 @@ document.getElementById("cards").onmousemove = e => {
     };
 }
 
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let interval = null;
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~!@#$%^&*()_+`-={}|[]\\:\";'<>?,./";
+let interval = [];
 const flaps = document.getElementsByClassName("splitflap");
 for (const flap of flaps){
     flap.onmouseover = event => {  
         let iteration = 0;
-        clearInterval(interval);
-        interval = setInterval(() => {
+        clearInterval(interval[flap]);
+        interval[flap] = setInterval(() => {
             event.target.innerText = event.target.innerText
             .split("")
             .map((letter, index) => {
                 if(index < iteration) {
                     return event.target.dataset.value[index];
                 }
-                return letters[Math.floor(Math.random() * 26)];
+                return letters[Math.floor(Math.random() * (letters.length -1))];
             })
             .join("");
             if(iteration >= event.target.dataset.value.length){ 
-                clearInterval(interval);
+                clearInterval(interval[flap]);
             }
             iteration += 1 / 3;
-        }, 30);
+        }, ((Math.random()*20)+30));
     }
 }
