@@ -17,7 +17,7 @@ let mouse = {
 window.addEventListener('mousemove',
     function(event) {
         mouse.x = event.x;
-        mouse.y = event.y;
+        mouse.y = event.y + window.scrollY;
     }
 );
 
