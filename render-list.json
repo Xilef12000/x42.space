@@ -9,14 +9,18 @@
         "http://localhost:3000/about-me",
         "http://localhost:3000/assets/styles/style.css",
         "http://localhost:3000/assets/styles/fonts.css",
-        "http://localhost:3000/images/IMG_top.jpg",
-        "http://localhost:3000/Projects",
-        "http://localhost:3000/images/x42_space.png",
-        "http://localhost:3000/images/grandMA2 Lissaious.png",
-        "http://localhost:3000/images/scripts.png",
-        "http://localhost:3000/images/qlcplus-dark-theme.png",
-        "http://localhost:3000/images/ws2812-over-artnet.png",
-        "http://localhost:3000/images/custom-browser-start-page.png",
-        "http://localhost:3000/images/xilef12000.github.io.png"
+        "http://localhost:3000/assets/images/thumbnail/pencil_case.jpg",
+        "http://localhost:3000/assets/scripts/404.js",
+        "http://localhost:3000/projects/grandMA2_Lissaious_Form_Effect",
+        "http://localhost:3000/assets/images/thumbnail/x42_space.png",
+        "http://localhost:3000/assets/images/thumbnail/grandMA2_Lissaious.png",
+        "http://localhost:3000/assets/images/thumbnail/scripts.png",
+        "http://localhost:3000/assets/images/thumbnail/qlcplus-dark-theme.png",
+        "http://localhost:3000/assets/images/thumbnail/ws2812-over-artnet.png",
+        "http://localhost:3000/assets/images/thumbnail/custom-browser-start-page.png",
+        "http://localhost:3000/assets/images/thumbnail/xilef12000.github.io.png",
+        "http://localhost:3000/assets/scripts/about.js",
+        "http://localhost:3000/assets/downloads/Lissaious.xml",
+        "http://localhost:3000/assets/images/Lissaious_Graph_Editor.png"
     ]
 }
