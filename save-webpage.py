@@ -83,12 +83,16 @@ while True:
                     for c in css:   
                         if c.find('@import') != -1:
                             urls.append(urljoin(url,c.split('"', 2)[1]))
+                    '''
+                    # commented because current system can't handle data urls
                     if decoded.find('@font-face') != -1:
                         fonts = decoded.split('url')
                         for font in fonts:
+                            #print(font)
                             if font[:1] == '(':
                                 #print(font.split(')')[0].replace('(', '').replace("'", ''))
                                 urls.append(urljoin(url,font.split(')')[0].replace('(', '').replace("'", '')))
+                    '''
             if path.find('.') != -1:
                 file = "{}{}".format(config["out_dir"],path)
             else:
