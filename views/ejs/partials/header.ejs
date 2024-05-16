@@ -1,0 +1,21 @@
+<header class="header">
+	<div class="limiter">
+		<a href="/" class="logo">
+			<h1>x42.space</h1>
+		</a>
+		<div class="header-right">
+			<a <%= typeof title != 'undefined' ? title == "Home" ? 'class=active' : '' : '' %> href="/">
+				<h2>Home</h2>
+			</a>
+			<a <%= typeof title != 'undefined' ? title == "Projects" ? 'class=active' : '' : '' %> href="/projects">
+				<h2>Projects</h2>
+			</a>
+			<a href="#Services">
+				<h2>Services</h2>
+			</a>
+			<a href="#Social">
+				<h2>Social</h2>
+			</a>
+		</div>
+	</div>
+</header>
