@@ -1,0 +1,21 @@
+{
+  "name": "x42.space",
+  "version": "1.0.0",
+  "description": "gh-page for https://x42.space",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xilef12000",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "marked": "^12.0.2",
+    "mime": "^4.0.3"
+  },
+  "type": "module"
+}

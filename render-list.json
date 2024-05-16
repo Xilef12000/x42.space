@@ -1,0 +1,22 @@
+{
+    "parse": [
+        "http://localhost:3000/",
+        "http://localhost:3000/404",
+        "http://localhost:3000/sitemap.txt",
+        "http://localhost:3000/robots.txt",
+        "http://localhost:3000/projects",
+        "http://localhost:3000/about",
+        "http://localhost:3000/about-me",
+        "http://localhost:3000/assets/styles/style.css",
+        "http://localhost:3000/assets/styles/fonts.css",
+        "http://localhost:3000/images/IMG_top.jpg",
+        "http://localhost:3000/Projects",
+        "http://localhost:3000/images/x42_space.png",
+        "http://localhost:3000/images/grandMA2 Lissaious.png",
+        "http://localhost:3000/images/scripts.png",
+        "http://localhost:3000/images/qlcplus-dark-theme.png",
+        "http://localhost:3000/images/ws2812-over-artnet.png",
+        "http://localhost:3000/images/custom-browser-start-page.png",
+        "http://localhost:3000/images/xilef12000.github.io.png"
+    ]
+}
