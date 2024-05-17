@@ -207,6 +207,17 @@ h6 {
 .footer a:hover {
 	color: var(--color-blue);
 }
+.footer a.up-svg {
+	height: 2rem;
+	width: 2rem;
+	margin-right: 5rem;
+}
+.footer a.up-svg svg path {
+	fill: var(--color-text);
+}
+.footer a.up-svg:hover svg path {
+	fill: var(--color-blue);
+}
 @media screen and (max-width: calc(1920px*0.8)) {
 	.footer .limiter{
 		width: 80vw;

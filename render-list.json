@@ -10,6 +10,7 @@
         "http://localhost:3000/assets/styles/style.css",
         "http://localhost:3000/assets/styles/fonts.css",
         "http://localhost:3000/assets/images/thumbnail/pencil_case.jpg",
+        "http://localhost:3000/assets/scripts/script.js",
         "http://localhost:3000/assets/scripts/404.js",
         "http://localhost:3000/projects/grandMA2_Lissaious_Form_Effect",
         "http://localhost:3000/assets/images/thumbnail/x42_space.png",
@@ -21,6 +22,7 @@
         "http://localhost:3000/assets/images/thumbnail/xilef12000.github.io.png",
         "http://localhost:3000/assets/scripts/about.js",
         "http://localhost:3000/assets/downloads/Lissaious.xml",
-        "http://localhost:3000/assets/images/Lissaious_Graph_Editor.png"
+        "http://localhost:3000/assets/images/Lissaious_Graph_Editor.png",
+        "http://localhost:3000/projects/assets/scripts/script.js"
     ]
 }
