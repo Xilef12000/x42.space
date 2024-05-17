@@ -57,11 +57,15 @@ while True:
             if url.endswith("/"):
                 url += "index"
             path = urlparse(url).path
+            error = 0
             try:
                 response = urllib.request.urlopen(url)
             except Exception as e:
+                error = 1
                 print(e)
+            print(response.getcode())
             webContent = response.read()
+
             if not args.fast:
                 soup = BeautifulSoup(webContent, 'lxml')
                 if response.info().get_content_type() == "text/html":
