@@ -45,8 +45,8 @@ app.get('*', async (req, res) => {
             }
         }
         else { // else show 404 error
-            //res.status(404).render('ejs/404');
-            res.status(200).render('ejs/404');
+            res.status(404).render('ejs/404');
+            //res.status(200).render('ejs/404');
         }
     }
     catch (e) {
