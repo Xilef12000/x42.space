@@ -63,50 +63,51 @@ while True:
             except Exception as e:
                 error = 1
                 print(e)
-            print(response.getcode())
-            webContent = response.read()
+            #print(response.getcode())
+            if response.getcode() == 200 and error == 0:
+                webContent = response.read()
 
-            if not args.fast:
-                soup = BeautifulSoup(webContent, 'lxml')
-                if response.info().get_content_type() == "text/html":
-                    for element in elements_href:
-                        for link in soup.findAll(element):
-                            href = link.get('href')
-                            if href and not href.startswith('http://') and not href.startswith('https://') and not href.startswith('#'):
-                                #print(server + href)
-                                urls.append(urljoin(url, href))
-                    for element in elements_src:
-                        for link in soup.findAll(element):
-                            href = link.get('src')
-                            if href and not href.startswith('http://') and not href.startswith('https://') and not href.startswith('#'):
-                                #print(server + href)
-                                urls.append(urljoin(url, href))
-                elif response.info().get_content_type() == "text/css":
-                    decoded = webContent.decode("utf-8")
-                    css = decoded.split(';\n', 10)
-                    for c in css:   
-                        if c.find('@import') != -1:
-                            urls.append(urljoin(url,c.split('"', 2)[1]))
-                    '''
-                    # commented because current system can't handle data urls
-                    if decoded.find('@font-face') != -1:
-                        fonts = decoded.split('url')
-                        for font in fonts:
-                            #print(font)
-                            if font[:1] == '(':
-                                #print(font.split(')')[0].replace('(', '').replace("'", ''))
-                                urls.append(urljoin(url,font.split(')')[0].replace('(', '').replace("'", '')))
-                    '''
-            if path.find('.') != -1:
-                file = "{}{}".format(config["out_dir"],path)
-            else:
-                file = "{}{}.html".format(config["out_dir"],path)
-            #print("        "+file)
+                if not args.fast:
+                    soup = BeautifulSoup(webContent, 'lxml')
+                    if response.info().get_content_type() == "text/html":
+                        for element in elements_href:
+                            for link in soup.findAll(element):
+                                href = link.get('href')
+                                if href and not href.startswith('http://') and not href.startswith('https://') and not href.startswith('#'):
+                                    #print(server + href)
+                                    urls.append(urljoin(url, href))
+                        for element in elements_src:
+                            for link in soup.findAll(element):
+                                href = link.get('src')
+                                if href and not href.startswith('http://') and not href.startswith('https://') and not href.startswith('#'):
+                                    #print(server + href)
+                                    urls.append(urljoin(url, href))
+                    elif response.info().get_content_type() == "text/css":
+                        decoded = webContent.decode("utf-8")
+                        css = decoded.split(';\n', 10)
+                        for c in css:   
+                            if c.find('@import') != -1:
+                                urls.append(urljoin(url,c.split('"', 2)[1]))
+                        '''
+                        # commented because current system can't handle data urls
+                        if decoded.find('@font-face') != -1:
+                            fonts = decoded.split('url')
+                            for font in fonts:
+                                #print(font)
+                                if font[:1] == '(':
+                                    #print(font.split(')')[0].replace('(', '').replace("'", ''))
+                                    urls.append(urljoin(url,font.split(')')[0].replace('(', '').replace("'", '')))
+                        '''
+                if path.find('.') != -1:
+                    file = "{}{}".format(config["out_dir"],path)
+                else:
+                    file = "{}{}.html".format(config["out_dir"],path)
+                #print("        "+file)
 
-            os.makedirs(os.path.dirname(file), exist_ok=True)
-            f = open(file, 'wb')
-            f.write(webContent)
-            f.close
+                os.makedirs(os.path.dirname(file), exist_ok=True)
+                f = open(file, 'wb')
+                f.write(webContent)
+                f.close
     if br == True:
         break
 
