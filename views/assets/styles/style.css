@@ -162,8 +162,14 @@ h6 {
 	background-color: var(--color-grey3);
 	color: var(--color-text);
 }
+.header a.logo .blue{
+	color: var(--color-blue);
+}
 .header a.logo:hover {
 	background-color: var(--color-blue);
+	color: var(--color-text-alt);
+}
+.header a.logo:hover .blue{
 	color: var(--color-text-alt);
 }
 .header a.active {
