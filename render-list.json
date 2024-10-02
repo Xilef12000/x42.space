@@ -7,6 +7,7 @@
         "http://localhost:3000/projects",
         "http://localhost:3000/about",
         "http://localhost:3000/about-me",
+        "http://localhost:3000/assets/favicon/x42Favicon96.png",
         "http://localhost:3000/assets/styles/style.css",
         "http://localhost:3000/assets/styles/fonts.css",
         "http://localhost:3000/assets/images/thumbnail/pencil_case.jpg",
