@@ -7,3 +7,11 @@ catch (error) {/*No DOM Element with Id*/}
 function goTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+function header_fold() {
+    var e = document.getElementById("header");
+    if (e.classList.contains("fold_open")) {
+        e.classList.remove("fold_open");
+    } else {
+        e.classList.add("fold_open");
+    }
+}

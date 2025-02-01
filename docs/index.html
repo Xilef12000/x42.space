@@ -9,26 +9,41 @@
 <link rel="stylesheet" href="/assets/styles/fonts.css">
 <script defer src="/assets/scripts/script.js" type="text/javascript"></script>
 	<meta name="title" content="Home" />
+	<script defer src="/assets/scripts/modal.js" type="text/javascript"></script> 
 </head>
 <body>
-	<header class="header">
+	<header class="header"  id="header">
 	<div class="limiter">
 		<a href="/" class="logo">
 			<h1><span class="blue">x42</span>.space</h1>
 		</a>
+		<button class="dropbtn" onclick="header_fold()">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="bars"><path fill="#undefined" d="M3,8H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,8Zm18,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"></path></svg>
+		</button>
 		<div class="header-right">
-			<a id="href-Home" href="/">
-				<h2>Home</h2>
-			</a>
-			<a id="href-Projects" href="/projects">
-				<h2>Projects</h2>
-			</a>
-			<a href="#Services">
-				<h2>Services</h2>
-			</a>
-			<a href="#Social">
-				<h2>Social</h2>
-			</a>
+			<span>
+				<a id="href-Home" href="/">
+					<h2>Home</h2>
+				</a>
+				<a id="href-Projects" href="/projects">
+					<h2>Projects</h2>
+				</a>
+				<a id="href-Veranstaltungstechnik"href="/VT">
+					<h2>Technik</h2>
+				</a>
+				<a id="href-LoRa"href="/LoRa">
+					<h2>LoRa</h2>
+				</a>
+			</span>
+			<br class="br_opt">
+			<span>
+				<a href="#Services">
+					<h2>Services</h2>
+				</a>
+				<a href="#Social">
+					<h2>Social</h2>
+				</a>
+			</span>
 		</div>
 	</div>
 </header>
@@ -67,7 +82,38 @@
                 </div>
             </a>
         </div>
-        <a href="/projects">see more...</a>
+    </div>
+    <h3><a href="/projects">More Projects...</a></h3>
+    <br>
+    <br>
+    <h2>Veranstaltungstechnik:</h2>
+    <div class="VT">
+        <div class="Event">
+            <div class="desciption">
+                <div class="text">
+                    <h3>Theater Hochschule Konstanz</h3>
+                    <p>Das Böse kommt auf leisen Sohlen - Theater Hochschule Konstanz & Musikschule Konstanz<br>Livestream der <a href="https://www.youtube.com/watch?v=dFg95mCTO1s">Première</a> & <a href="https://www.youtube.com/watch?v=2lY7N5bbXIs">Dernière</a></p>
+                </div>
+                <div class="gallery">
+                    <div class="Img_small mobile"><img src="/assets/images/VT/Das_Boese_kommt/149_Das_Boese_kommt_7096.jpg"></div>
+                    <div class="Img_small"><img src="/assets/images/VT/Das_Boese_kommt/199_Das_Boese_kommt_7538.jpg"></div>
+                    <div class="Img_small"><img src="/assets/images/VT/Das_Boese_kommt/207_Das_Boese_kommt_7671.jpg"></div>
+                    <div class="Img_small"><img src="/assets/images/VT/Das_Boese_kommt/240_Das_Boese_kommt_5398.jpg"></div>
+                    <div class="Img_small"><img src="/assets/images/VT/Das_Boese_kommt/285_Das_Boese_kommt_5683.jpg"></div>
+                    <div class="Img_small"><img src="/assets/images/VT/Das_Boese_kommt/361_Das_Boese_kommt_8725.jpg"></div>
+                    <div class="Img_small"><img src="/assets/images/VT/Das_Boese_kommt/409_Das_Boese_kommt_9052.jpg"></div>
+                    <div class="Img_small"><img src="/assets/images/VT/Das_Boese_kommt/461_Das_Boese_kommt_9613.jpg"></div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/assets/images/VT/Das_Boese_kommt/149_Das_Boese_kommt_7096.jpg">
+            </div>
+        </div>
+    </div>
+    <h3><a href="/VT">Mehr Veranstaltungstechnik...</a></h3></div>
+    <div class="modal" id="Modal">
+        <span class="close">&times;</span>
+        <img class="content" id="img01">
     </div>
 </article>
 	<footer class="footer">
