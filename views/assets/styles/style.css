@@ -348,7 +348,6 @@ h6 {
 .project .text {
 	grid-row-start: 2;
 	height: 3rem;
-	overflow: scroll;
 }
 .project .text p {
 	overflow-wrap: break-word;
