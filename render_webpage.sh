@@ -40,9 +40,9 @@ done
 echo "\e[1;35mPreparing dir ... \e[0m"
 rm -r -f $(pwd)/docs/
 mkdir -p $(pwd)/docs/
-cp $(pwd)/CNAME $(pwd)/docs/CNAME
 node_server
 cp $(pwd)/CNAME $(pwd)/docs/CNAME
+cp $(pwd)/.nojekyll $(pwd)/docs/.nojekyll
 echo "\e[1;35mStarting static render ... \e[0m"
 if $fast ; then
     echo "\e[1;32mUsing fast mode \e[0m"
